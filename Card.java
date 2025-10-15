@@ -19,7 +19,9 @@ public class Card {
     public void expiredAtValidation() {
         LocalDate today = LocalDate.now();
         if (today.isAfter(expiredAt)) {
+            System.out.println("---------------------------");
             System.out.println("Your card is expired..!");
+            System.out.println("---------------------------");
             System.exit(0);
         }
     }
@@ -30,9 +32,13 @@ public class Card {
             System.out.print("Enter PIN: ");
             int inputPin = Integer.parseInt(scanner.nextLine());
             if (inputPin != pin) {
+                System.out.println("---------------------------");
                 System.out.println("Your PIN is incorrect..!");
+                System.out.println("---------------------------");
             }else {
+                System.out.println("---------------------------");
                 System.out.println("You login successfully!");
+                System.out.println("---------------------------");
                 break;
             }
         }while (true);

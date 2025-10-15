@@ -28,7 +28,8 @@ public class Main {
         do {
             ATM option = new ATM();
             option.option();
-            System.out.print("Enter amount: ");
+            System.out.println("---------------------------");
+            System.out.print("Enter option: ");
             int opt = Integer.parseInt(scanner.nextLine());
             System.out.println("---------------------------");
             switch (opt) {
@@ -36,6 +37,7 @@ public class Main {
                     do {
                         ATM display = new ATM();
                         display.display("Saving account");
+                        System.out.println("---------------------------");
                         System.out.print("Enter option: ");
                         int optSaving = Integer.parseInt(scanner.nextLine());
                         System.out.println("---------------------------");
@@ -51,7 +53,10 @@ public class Main {
                                 double amount = Double.parseDouble(scanner.nextLine());
                                 savingAccount.withdrawal(BigDecimal.valueOf(amount));
                             }
-                            case 3 -> savingAccount.checkBalance();
+                            case 3 -> {
+                                savingAccount.checkBalance();
+                                System.out.println("---------------------------");
+                            }
                             case 0 -> {
                                 System.out.println("Exit the program..!");
                                 System.exit(0);
@@ -78,7 +83,10 @@ public class Main {
                                 double amount = Double.parseDouble(scanner.nextLine());
                                 payrollAccount.withdrawal(BigDecimal.valueOf(amount));
                             }
-                            case 3 -> payrollAccount.checkBalance();
+                            case 3 -> {
+                                payrollAccount.checkBalance();
+                                System.out.println("---------------------------");
+                            }
                             case 0 -> {
                                 System.out.println("Exit the program..!");
                                 System.exit(0);
@@ -92,20 +100,26 @@ public class Main {
                     do {
                         ATM card = new ATM();
                         card.display("Saving Card");
+                        System.out.println("---------------------------");
                         System.out.print("Enter option: ");
                         int optATM = Integer.parseInt(scanner.nextLine());
                         switch (optATM) {
                             case 1 -> {
+                                System.out.println("---------------------------");
                                 System.out.print("Enter amount: ");
                                 double amount = Double.parseDouble(scanner.nextLine());
                                 savingAccount.deposit(BigDecimal.valueOf(amount));
                             }
                             case 2 -> {
+                                System.out.println("---------------------------");
                                 System.out.print("Enter amount: ");
                                 double amount = Double.parseDouble(scanner.nextLine());
                                 savingAccount.withdrawal(BigDecimal.valueOf(amount));
                             }
-                            case 3 -> savingAccount.checkBalance();
+                            case 3 -> {
+                                savingAccount.checkBalance();
+                                System.out.println("---------------------------");
+                            }
                             case 0 -> System.exit(0);
                         }
                     } while (true);

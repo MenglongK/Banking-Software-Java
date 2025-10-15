@@ -10,6 +10,7 @@ public class Account {
 
     public Account() {
     }
+
     ;
 
     public Account(String actNo, String actName, BigDecimal balance, LocalDate createdAt) {
@@ -25,6 +26,9 @@ public class Account {
             return;
         }
         balance = balance.add(amount);
+        System.out.println("---------------------------");
+        System.out.println("Deposit successfully!");
+        System.out.println("---------------------------");
     }
 
     public void withdrawal(BigDecimal amount) {
@@ -36,9 +40,10 @@ public class Account {
             System.out.println("Insufficinet balance..!");
             return;
         }
-        System.out.println("--------------------");
+        System.out.println("---------------------------");
         balance = balance.subtract(amount);
         System.out.println("Withdraw successfully!!!");
+        System.out.println("---------------------------");
     }
 
     public void checkBalance() {
