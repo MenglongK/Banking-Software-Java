@@ -11,8 +11,10 @@ public class Main {
 
         // use special super()
         SavingAccount savingAccount = new SavingAccount("7777", "MENGLONG", BigDecimal.valueOf(5000), LocalDate.of(2023, 10, 10), 7);
+
         PayrollAccount payrollAccount = new PayrollAccount("8888", "CHAN CHHAYA", BigDecimal.valueOf(400), LocalDate.of(2023, 10, 10), 20);
 
+        Card cardATM = new Card(7777, BigDecimal.valueOf(1000), LocalDate.of(2027, 10, 10));
 
         // use normal super
         /*
@@ -57,7 +59,7 @@ public class Main {
                         }
                     } while (true);
                 }
-                case 2-> {
+                case 2 -> {
                     do {
                         ATM display = new ATM();
                         display.display("Payroll account");
@@ -84,8 +86,31 @@ public class Main {
                         }
                     } while (true);
                 }
-                case 3->{}
-                case 0-> {
+                case 3 -> {
+                    cardATM.expiredAtValidation();
+                    cardATM.inputPin();
+                    do {
+                        ATM card = new ATM();
+                        card.display("Saving Card");
+                        System.out.print("Enter option: ");
+                        int optATM = Integer.parseInt(scanner.nextLine());
+                        switch (optATM) {
+                            case 1 -> {
+                                System.out.print("Enter amount: ");
+                                double amount = Double.parseDouble(scanner.nextLine());
+                                savingAccount.deposit(BigDecimal.valueOf(amount));
+                            }
+                            case 2 -> {
+                                System.out.print("Enter amount: ");
+                                double amount = Double.parseDouble(scanner.nextLine());
+                                savingAccount.withdrawal(BigDecimal.valueOf(amount));
+                            }
+                            case 3 -> savingAccount.checkBalance();
+                            case 0 -> System.exit(0);
+                        }
+                    } while (true);
+                }
+                case 0 -> {
                     System.out.println("Exit the program..!");
                     System.exit(0);
                 }
