@@ -12,12 +12,14 @@ public class Main {
         // use special super()
         SavingAccount savingAccount = new SavingAccount("7777", "MENGLONG", BigDecimal.valueOf(5000), LocalDate.of(2023, 10, 10), 7);
 
-        PayrollAccount payrollAccount = new PayrollAccount("8888", "CHAN CHHAYA", BigDecimal.valueOf(400), LocalDate.of(2023, 10, 10), 20);
+        PayrollAccount payrollAccount = new PayrollAccount("8888", "CHAN CHHAYA", BigDecimal.valueOf(0), LocalDate.of(2023, 10, 10), 20);
 
-        Card cardATM = new Card();
+        Card cardATM = new Card(7777,BigDecimal.valueOf(1000),LocalDate.of(2026, 10, 10));
+        /*
         cardATM.pin = 7777;
         cardATM.overlimit = BigDecimal.valueOf(1000);
         cardATM.expiredAt = LocalDate.of(2026, 10, 10);
+        **/
 
         // use normal super
         /*

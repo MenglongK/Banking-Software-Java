@@ -9,6 +9,12 @@ public class Card {
     BigDecimal overlimit; // under 1000
     LocalDate expiredAt; // validate just join in deposit (your card has expired)
 
+    public Card(int pin, BigDecimal overlimit, LocalDate expiredAt) {
+        this.pin = pin;
+        this.overlimit = overlimit;
+        this.expiredAt = expiredAt;
+    }
+
     public void expiredAtValidation() {
         LocalDate today = LocalDate.now();
         if (today.isAfter(expiredAt)) {
