@@ -14,7 +14,10 @@ public class Main {
 
         PayrollAccount payrollAccount = new PayrollAccount("8888", "CHAN CHHAYA", BigDecimal.valueOf(400), LocalDate.of(2023, 10, 10), 20);
 
-        Card cardATM = new Card(7777, BigDecimal.valueOf(1000), LocalDate.of(2027, 10, 10));
+        Card cardATM = new Card();
+        cardATM.pin = 7777;
+        cardATM.overlimit = BigDecimal.valueOf(1000);
+        cardATM.expiredAt = LocalDate.of(2026, 10, 10);
 
         // use normal super
         /*
@@ -114,6 +117,12 @@ public class Main {
                                 System.out.println("---------------------------");
                                 System.out.print("Enter amount: ");
                                 double amount = Double.parseDouble(scanner.nextLine());
+                                if (cardATM.overlimit.compareTo(BigDecimal.valueOf(amount)) < 0 && savingAccount.balance.compareTo(BigDecimal.valueOf(amount)) > 0) {
+                                    System.out.println("---------------------------");
+                                    System.out.println("You have to withdraw below " + cardATM.overlimit);
+                                    System.out.println("---------------------------");
+                                    break;
+                                }
                                 savingAccount.withdrawal(BigDecimal.valueOf(amount));
                             }
                             case 3 -> {

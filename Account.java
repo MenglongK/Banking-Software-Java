@@ -22,7 +22,9 @@ public class Account {
 
     public void deposit(BigDecimal amount) {
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
+            System.out.println("---------------------------");
             System.out.println("Invalid amount..!");
+            System.out.println("---------------------------");
             return;
         }
         balance = balance.add(amount);
@@ -33,11 +35,15 @@ public class Account {
 
     public void withdrawal(BigDecimal amount) {
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
+            System.out.println("---------------------------");
             System.out.println("Amount must be bigger than ZERO");
+            System.out.println("---------------------------");
             return;
         }
         if (amount.compareTo(balance) > 0) {
+            System.out.println("---------------------------");
             System.out.println("Insufficinet balance..!");
+            System.out.println("---------------------------");
             return;
         }
         System.out.println("---------------------------");
