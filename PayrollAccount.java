@@ -1,5 +1,7 @@
 package kh.edu.istad.classandobject.oop.inheritance.bankaccount;
 
+import com.sun.tools.jconsole.JConsoleContext;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -16,7 +18,7 @@ public class PayrollAccount extends Account {
     public void deposit(BigDecimal amount) {
         super.deposit(amount);
         if (amount.compareTo(BigDecimal.ZERO)>0) {
-            balance = balance.subtract(amount.multiply(BigDecimal.valueOf(taxRate / 100))).setScale(2, RoundingMode.FLOOR);
+            balance = balance.subtract(amount.multiply(BigDecimal.valueOf(taxRate / 100))).setScale(2,RoundingMode.UP);
         }
     }
 
